@@ -1,1 +1,16 @@
-<p>user.component works!</p>
+<!-- <p>user.component works!</p>
+
+<pre>{{ users | json }}</pre> -->
+<ul>
+    <li *ngFor="let u of users" >
+        {{ u.name }} - {{ u.email }}
+    </li>
+</ul>
+
+<br>
+
+<ul>
+    @for (u of users; track u.id){
+        <li> {{ u.name }} - {{ u.email }} </li>
+    }
+</ul>

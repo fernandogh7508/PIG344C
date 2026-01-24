@@ -10,3 +10,4 @@
 | ng new mi-primer-angular --standalone --routing --style=css | creación de pruyecto en angular    |
 | ng serve -o                                                 | Corre el servidor y abre navegador |
 | ng generate service services/user.service/user.service      | para crear un servicio             |
+| ng generate component view/user/user.component              | generamos vista de usuario         |
