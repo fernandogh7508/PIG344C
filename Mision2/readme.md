@@ -17,3 +17,9 @@ Spring web
 spring Data JPA
 PostgreSql Driver
 
+para el mensaje ajustar aplication.yml al final del codigo
+```
+ error:
+    include-message: always
+```
+
