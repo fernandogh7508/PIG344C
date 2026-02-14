@@ -1,6 +1,5 @@
 //====================================================
 // DBML - Energy Management Systen
-// https://dbdiagram.io/
 //Este archivo define:
 //-La estructura de la base de datos
 //-Las tablas
@@ -117,6 +116,13 @@ indexes {
   (power_plant_id,year,month, measurement_type_id) [unique]
 }
 }
+
+//dwfine el tipo de Enum
+Enum Role{
+  ADMIN
+  USER
+  ANALYST
+}
 /*
 Tabla: users
 Función
@@ -124,11 +130,15 @@ Función
 -Gestiona autentificación y roles
 -No pertenece al dominio energético
 */
+
 Table users{
   id integer [primary key]
   username varchar [unique]
-  role varchar //Rol(ADMIN,ANALYST,USER)
+  role Role [not null]
+  email varchar [unique]
+  password varchar
   created_at timestamp //Fecha de creación
+  updated_at timestamp //Fecha de modificación
 }
 /*
 Tabla: audit_log
