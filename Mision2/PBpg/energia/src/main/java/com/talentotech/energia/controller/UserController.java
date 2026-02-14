@@ -3,10 +3,7 @@ import com.talentotech.energia.model.User;
 import com.talentotech.energia.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
 
@@ -41,8 +38,22 @@ public class UserController {
     public User update(@PathVariable Long id, @RequestBody User userDetails){
         User user = userRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        if(userDetails.getUsername()!=null &&
+        !userDetails.getUsername().trim().isEmpty()){
         user.setUsername(userDetails.getUsername());
-        user.setEmail(userDetails.getEmail());
+        }
+          if(userDetails.getEmail()!=null &&
+        !userDetails.getEmail().trim().isEmpty()){
+          user.setEmail(userDetails.getEmail());
+        }
+         if(userDetails.getPassword()!=null &&
+        !userDetails.getPassword().trim().isEmpty()){
+          user.setPassword(userDetails.getPassword());
+        }
+            
+          user.setRole(userDetails.getRole());
+        
+        
         return userRepository.save(user);
 
     }
