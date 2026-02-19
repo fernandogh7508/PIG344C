@@ -1,5 +1,6 @@
 //====================================================
 // DBML - Energy Management Systen
+//https://dbdiagram.io/
 //Este archivo define:
 //-La estructura de la base de datos
 //-Las tablas
