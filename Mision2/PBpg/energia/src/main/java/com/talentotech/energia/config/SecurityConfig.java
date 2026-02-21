@@ -8,11 +8,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
-@EnableMethodSecurity
+@Configuration //se carga automáticamente al iniciar la app
+@EnableMethodSecurity // activa la seguridad por anotaciones en métodos
 public class SecurityConfig {
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder(){ //crea un objeto global para encriptar contraseñas
         return new BCryptPasswordEncoder();
     }
     @Bean
