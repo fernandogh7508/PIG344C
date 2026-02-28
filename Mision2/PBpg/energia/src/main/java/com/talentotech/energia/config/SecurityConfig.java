@@ -24,6 +24,7 @@ public class SecurityConfig {
          .requestMatchers("/api/users").permitAll()
         .requestMatchers("/api/users/login").permitAll()
          .requestMatchers("/api/country").permitAll()
+         .requestMatchers("/api/region").permitAll()
         .anyRequest().authenticated())
         .formLogin(form -> form.disable())
         .httpBasic(basic -> basic.disable());
