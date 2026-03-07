@@ -1,0 +1,73 @@
+<div class="row">
+
+<div class="col s4">
+
+<div class="card">
+<div class="card-content">
+
+<span class="card-title">Region Form</span>
+
+<div class="input-field">
+<input type="text" [(ngModel)]="region.name">
+<label>Region Name</label>
+</div>
+
+<div class="input-field">
+
+<select [(ngModel)]="region.country">
+<option *ngFor="let c of countries" [ngValue]="c">
+{{c.name}}
+</option>
+
+</select>
+
+<label>Country</label>
+
+</div>
+
+<button class="btn blue" (click)="saveRegion()">
+Save
+</button>
+
+</div>
+</div>
+
+</div>
+
+
+<div class="col s8">
+
+<table class="striped">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Country</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr *ngFor="let r of regions">
+
+<td>{{r.id}}</td>
+<td>{{r.name}}</td>
+<td>{{r.country?.name}}</td>
+
+<td>
+
+ 
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>

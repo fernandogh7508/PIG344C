@@ -1,4 +1,4 @@
-<nav class="nav-wrapper blue">
+<!-- <nav class="nav-wrapper blue">
 
   <div class="container">
   
@@ -10,6 +10,48 @@
   
   <div class="container p-4">
   
-   
+   <app-country></app-country>
   
-  </div> 
+  </div>  -->
+    <nav>
+  <div class="nav-wrapper blue darken-3">
+    <a href="#" class="brand-logo" style="margin-left:15px;">Energy System</a>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+      <li>
+        <a routerLink="/country">
+          <i class="material-icons left">public</i>Country
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/region">
+          <i class="material-icons left">map</i>Region
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/company">
+          <i class="material-icons left">business</i>Company
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/powerplant">
+          <i class="material-icons left">flash_on</i>PowerPlant
+        </a>
+      </li>
+      <li>
+        <a routerLink="/powerplant">
+          <i class="material-icons left">menu</i>Menu
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container" style="margin-top:20px;">
+  <router-outlet></router-outlet>
+</div>
